@@ -46,7 +46,7 @@
                     <!-- Modal Register -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
-                            <form action="#" method="post" class="modal-content">
+                            <form action="server/insert_form.php" method="post" class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLabel">Nuevo registro</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -56,68 +56,69 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="">Nombre del trabajo :</label>
-                                        <input type="text" class="form-control" placeholder="Nombre del trabajo">
+                                        <input type="text" class="form-control" name="name_job" placeholder="Nombre del trabajo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Nombre del solicitante del servicio</label>
+                                        <input type="text" class="form-control" name="name_service" placeholder="Nombre de cliente">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Telefono celular</label>
+                                        <input type="text" class="form-control" name="phone" placeholder="Telefono">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Lugar de entrega :</label>
-                                        <input type="text" class="form-control" placeholder="Lugar de entrega">
+                                        <input type="text" class="form-control" name="place_delivery" placeholder="Lugar de entrega">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Fecha de registro :</label>
-                                        <input type="date" name="" id="">
+                                        <label for="">Anticipo :</label>
+                                        <input type="text" class="form-control" name="anticipo" placeholder="Anticipo">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Especificaciones :</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Ingresa el texto aqui"></textarea>
+                                        <textarea class="form-control" name="especi" id="exampleFormControlTextarea1" rows="3" placeholder="Ingresa el texto aqui"></textarea>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                                    <button type="submit" name="reg_form" class="btn btn-primary">Guardar cambios</button>
                                 </div>
                             </form>
                         </div>
                     </div>
-
                     <table class="table">
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Nombre del cliente</th>
                                 <th>Nombre del trabajo</th>
                                 <th>Fecha de registro</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php 
+                                require('server/show_form.php');
+                                while($row = mysqli_fetch_array($result)) {
+                            ?>
                             <tr>
-                                <td>1</td>
-                                <td>Fachada de vidrio</td>
-                                <td>12/09/16</td>
+                                <td><?php echo $row['id_register']; ?></td>
+                                <td><?php echo $row['name_service']; ?></td>
+                                <td><?php echo $row['name_job']; ?></td>
+                                <td><?php echo $row['fecha_registro']; ?></td>
                                 <td>
-                                    <button type="submit" class="btn btn-warning">Editar</button>
                                     <button type="submit" class="btn btn-danger">Borrar</button>
-                                    <button type="submit" class="btn btn-success">Ver</button>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Fachada de vidrio</td>
-                                <td>12/09/16</td>
-                                <td>
-                                    <button type="submit" class="btn btn-warning">Editar</button>
-                                    <button type="submit" class="btn btn-danger">Borrar</button>
-                                    <button type="submit" class="btn btn-success">Ver</button>
-
+                                    <a type="submit" class="btn btn-success" href="show.php?id=<?php echo $row['id_register']; ?>" >Ver</a>
                                 </td>
                             </tr>
                         </tbody>
+                        <?php } ?>
                     </table>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4">
                 <div class="tra_reg">
-                    <h2>Trabajos Registrados</h2>
+                    <h2>Trabajos Completados</h2>
                     <table class="table">
                         <thead>
                             <tr>
