@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/ope.css">
     <title>Pentium</title>
 </head>
@@ -36,7 +37,7 @@
     </nav>
     <div class="jumbotron">
         <div class="row">
-            <div class="col-md-8 col-sm-8">
+            <div class="col-md-12 col-sm-12">
                 <div class="tra_reg">
                     <h2>Trabajos Pendientes</h2>
                     <button type="button" class="btn btn-primary mt-2 mb-2 ml-2" data-toggle="modal" data-target="#exampleModal">
@@ -86,61 +87,48 @@
                             </form>
                         </div>
                     </div>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nombre del cliente</th>
-                                <th>Nombre del trabajo</th>
-                                <th>Fecha de registro</th>
-                                <th>Opciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php 
-                                require('server/show_form.php');
-                                while($row = mysqli_fetch_array($result)) {
-                            ?>
-                            <tr>
-                                <td><?php echo $row['id_register']; ?></td>
-                                <td><?php echo $row['name_service']; ?></td>
-                                <td><?php echo $row['name_job']; ?></td>
-                                <td><?php echo $row['fecha_registro']; ?></td>
-                                <td>
-                                    <button type="submit" class="btn btn-danger">Borrar</button>
-                                    <a type="submit" class="btn btn-success" href="show.php?id=<?php echo $row['id_register']; ?>" >Ver</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                        <?php } ?>
-                    </table>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <div class="tra_reg">
-                    <h2>Trabajos Completados</h2>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nombre del trabajo</th>
-                                <th>Opciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Fachada</td>
-                                <td>
-                                    <button type="submit" class="btn btn-danger">Borrar</button>
-                                    <button type="submit" class="btn btn-success">Ver</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nombre del trabajo</th>
+                                    <th>Nombre del cliente</th>
+                                    <th>Telefono</th>
+                                    <th>Direccion del cliente</th>
+                                    <th>Anticipo</th>
+                                    <th>Especificaciones</th>
+                                    <th>Fecha de registro</th>
+                                    <th>Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php 
+                                    error_reporting(0);
+                                    require('server/show_form.php');
+                                    while($row = mysqli_fetch_array($result)) {
+                                ?>
+                                <tr>
+                                    <td> <?php echo $row['id_register']; ?></td>
+                                    <td> <?php echo $row['name_job'] ?></p>
+                                    <td> <?php echo $row['name_service'] ?></td>
+                                    <td> <?php echo $row['phone'] ?></td>
+                                    <td> <?php echo $row['place_delivery'] ?></td>
+                                    <td> <?php echo $row['anticipo'] ?></td>
+                                    <td> <?php echo $row['especi'] ?></td>
+                                    <td> <?php echo $row['fecha_registro'] ?></td>
 
+                                    <td>
+                                        <button type="submit" class="btn btn-danger">Borrar</button>
+                                        <a type="submit" class="btn btn-success mt-2" href="show.php?ID=<?php echo $row['id_register']; ?>" >Ver</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <?php } ?>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

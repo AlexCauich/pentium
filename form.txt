@@ -11,7 +11,7 @@
         <div class="row justify-content-center">
             <div class="col-md-6 col-sm-6">
             <?php 
-                require('server/show_data.php');
+                
                 while($row = mysqli_fetch_array($result)) {
             ?>
                 <div class="card">
@@ -20,6 +20,23 @@
                         <button class="btn btn-success">Agregar a completados</button>
                     </div>
                     <div class="card-body">
+
+                        <?php if ($_GET['edit'] && $_GET['edit'] == $row['id_register']) { ?>
+                            <form action="edit.php" method="post">
+                                <p><strong>Nombre del trabajo</strong> : <input type="text" value="<?php echo $row['name_job'] ?>"/></p>
+                                <p><strong>Nombre del cliente</strong> : <input type="text" value="<?php echo $row['name_service'] ?>"/></p>
+                                <p><strong>Telefono celular</strong> : <input type="text" value="<?php echo $row['phone'] ?>"/></p>
+                                <p><strong>Dirección del cliente</strong> : <input type="text" value="<?php echo $row['place_delivery'] ?>"/></p>
+                                <p><strong>Anticipo</strong> : <input type="text" values="<?php echo $row['anticipo'] ?>"/></p>
+                                <p><strong>Especificaciones</strong> : <input type="text" value="<?php echo $row['especi'] ?>"/></p>
+                                <p><strong>Fecha de registro</strong> : <input type="text" value="<?php echo $row['fecha_registro'] ?>"/></p>
+                                <p>
+                                    <input type="submit" value="Modificar" />
+                                    <a href="show.php">Cancelar</a>
+                                </p>
+                            </form>
+                        <?php } else { ?>
+
                         <p><strong>Nombre del trabajo</strong> : <?php echo $row['name_job'] ?></p>
                         <p><strong>Nombre del cliente</strong> : <?php echo $row['name_service'] ?></p>
                         <p><strong>Telefono celular</strong> : <?php echo $row['phone'] ?></p>
@@ -30,9 +47,11 @@
                     </div>
                     <div class="card-body">
                         <button type="submit" class="btn btn-danger">Borrar</button>
+                        <a type="submit" class="btn btn-warning" href="show.php?edit=<?php echo $row['id_register']; ?>">Editar</a>
                         <a type="submit" class="btn btn-primary" href="index.php" >Volver</a>
                     </div>
                 </div>
+                <?php } ?>
                 <?php } ?>
             </div>
         </div>
