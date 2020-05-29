@@ -65,3 +65,46 @@
 
 </body>
 </html>
+
+
+
+
+
+ <?php 
+                                    error_reporting(0);
+                                    require('server/show_form.php');
+                                    while($row = mysqli_fetch_array($result)) {
+                                ?>
+                                <tr>
+                                    <?php if ($_GET['edit'] && $_GET['edit'] == $row['id_register']) { ?>
+                                        <form action="server/edit.php" method="POST">
+                                            <td> <input type="text" class="form-control" name="id_register" value="<?php echo $row['id_register'] ?>"/></td>
+                                            <td> <input type="text" class="form-control" name="name_job" value="<?php echo $row['name_job'] ?>"/></td>
+                                            <td> <input type="text" class="form-control" name="name_service" value="<?php echo $row['name_service'] ?>"/></td>
+                                            <td> <input type="text" class="form-control" name="phone" value="<?php echo $row['phone'] ?>"/></td>
+                                            <td> <input type="text" class="form-control" name="place_delivery" value="<?php echo $row['place_delivery'] ?>"/></td>
+                                            <td> <input type="text" class="form-control" name="anticipo" value="<?php echo $row['anticipo'] ?>"/></td>
+                                            <td> <input type="text" class="form-control" name="especi" value="<?php echo $row['especi'] ?>"/></td>
+                                            <td> <input type="text" class="form-control" name="fecha_registro" value="<?php echo $row['fecha_registro'] ?>"/></td>
+                                            <td>
+                                                <button type="submit" class="btn btn-primary">M</button>
+                                                <a class="btn btn-danger mt-1" href="index.php">C</a>
+                                            </td>
+
+                                        </form>
+                                    <?php } else { ?>
+                                        <td> <?php echo $row['id_register']; ?></td>
+                                        <td> <?php echo $row['name_job'] ?></p>
+                                        <td> <?php echo $row['name_service'] ?></td>
+                                        <td> <?php echo $row['phone'] ?></td>
+                                        <td> <?php echo $row['place_delivery'] ?></td>
+                                        <td> <?php echo $row['anticipo'] ?></td>
+                                        <td> <?php echo $row['especi'] ?></td>
+                                        <td> <?php echo $row['fecha_registro'] ?></td>
+
+                                        <td>
+                                            <a type="submit" class="btn btn-danger" href="server/delete_register.php?ID=<?php echo $row['id_register']; ?>">B</a>
+                                            <a type="submit" class="btn btn-success" href="index.php?edit=<?php echo $row['id_register']; ?>" >E</a>
+                                        </td>
+                                    <?php } ?>
+                                </tr>
