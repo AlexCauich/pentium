@@ -36,7 +36,7 @@
         </div>
     </nav>
     <div class="jumbotron">
-        <div class="row">
+        <div id="App" class="row">
             <div class="col-md-12 col-sm-12">
                 <div class="tra_reg">
                     <h2>Trabajos Pendientes</h2>
@@ -47,7 +47,8 @@
                     <!-- Modal Register -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
-                            <form action="server/insert_form.php" method="post" class="modal-content">
+                            <form id="register-form" class="modal-content">
+                                <input type="hidden" id="datoID">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLabel">Nuevo registro</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -57,32 +58,32 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="">Nombre del trabajo :</label>
-                                        <input type="text" class="form-control" name="name_job" placeholder="Nombre del trabajo">
+                                        <input type="text" class="form-control" id="name_job" placeholder="Nombre del trabajo">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Nombre del solicitante del servicio</label>
-                                        <input type="text" class="form-control" name="name_service" placeholder="Nombre de cliente">
+                                        <input type="text" class="form-control" id="name_service" placeholder="Nombre de cliente">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Telefono celular</label>
-                                        <input type="text" class="form-control" name="phone" placeholder="Telefono">
+                                        <input type="text" class="form-control" id="phone" placeholder="Telefono">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Lugar de entrega :</label>
-                                        <input type="text" class="form-control" name="place_delivery" placeholder="Lugar de entrega">
+                                        <input type="text" class="form-control" id="place_delivery" placeholder="Lugar de entrega">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Anticipo :</label>
-                                        <input type="text" class="form-control" name="anticipo" placeholder="Anticipo">
+                                        <input type="text" class="form-control" id="anticipo" placeholder="Anticipo">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Especificaciones :</label>
-                                        <textarea class="form-control" name="especi" id="exampleFormControlTextarea1" rows="3" placeholder="Ingresa el texto aqui"></textarea>
+                                        <textarea class="form-control" id="especi" id="exampleFormControlTextarea1" rows="3" placeholder="Ingresa el texto aqui"></textarea>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" name="reg_form" class="btn btn-primary">Guardar cambios</button>
+                                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
                                 </div>
                             </form>
                         </div>
@@ -102,29 +103,9 @@
                                     <th>Opciones</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <?php 
-                                    error_reporting(0);
-                                    require('server/show_form.php');
-                                    while($row = mysqli_fetch_array($result)) {
-                                ?>
-                                <tr>
-                                    <td> <?php echo $row['id_register']; ?></td>
-                                    <td> <?php echo $row['name_job'] ?></p>
-                                    <td> <?php echo $row['name_service'] ?></td>
-                                    <td> <?php echo $row['phone'] ?></td>
-                                    <td> <?php echo $row['place_delivery'] ?></td>
-                                    <td> <?php echo $row['anticipo'] ?></td>
-                                    <td> <?php echo $row['especi'] ?></td>
-                                    <td> <?php echo $row['fecha_registro'] ?></td>
-
-                                    <td>
-                                        <button type="submit" class="btn btn-danger">Borrar</button>
-                                        <a type="submit" class="btn btn-success mt-2" href="show.php?ID=<?php echo $row['id_register']; ?>" >Ver</a>
-                                    </td>
-                                </tr>
+                            <tbody id="list">
+                               
                             </tbody>
-                            <?php } ?>
                         </table>
                     </div>
                 </div>
@@ -133,9 +114,11 @@
     </div>
 
 
-        <!-- Optional JavaScript -->
+    <!-- Optional JavaScript -->
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="App.js"></script>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
