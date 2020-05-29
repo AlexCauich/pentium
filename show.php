@@ -29,7 +29,7 @@
                         <p><strong>Fecha de registro</strong> : <?php echo $row['fecha_registro'] ?></p>
                     </div>
                     <div class="card-body">
-                        <button type="submit" class="btn btn-danger">Borrar</button>
+                        <button type="submit" class="btn btn-warning">Editar</button>
                         <a type="submit" class="btn btn-primary" href="index.php" >Volver</a>
                     </div>
                 </div>
