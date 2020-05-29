@@ -20,6 +20,14 @@ $(document).ready(function () {
 
         let url = edit === false ? 'server/insert_form.php' : 'server/register_edit.php';
 
+        if(edit === true){
+            const ui = new UI();
+            ui.showMessage('Edited successfully', 'warning');
+        }else {
+            const ui = new UI (); 
+            ui.showMessage('Register Added Successfully', 'primary');
+        }
+
         $.post(url, postDate, function(resp) {
             console.log(resp);
             fetchJob();
@@ -45,12 +53,12 @@ $(document).ready(function () {
                         <td>${register.phone}</td>
                         <td>${register.place_delivery}</td>
                         <td>${register.anticipo}</td>
-                        <td>${register.especi}</td>
+                        <td width="20%">${register.especi}</td>
                         <td>${register.fecha_registro}</td>
                         <td>
-                            <button class="reg_delete btn btn-danger">B</button>
-                            <button type="button" class="register_edit btn btn-warning" data-toggle="modal" data-target="#exampleModal">
-                                E
+                            <button class="reg_delete btn btn-danger">Borrar</button>
+                            <button type="button" class="register_edit btn btn-warning mt-1" data-toggle="modal" data-target="#exampleModal">
+                                Editar
                             </button>
                         </td>
                     </td>
@@ -92,7 +100,7 @@ $(document).ready(function () {
     });
 });
 
-/*class UI {
+class UI {
     showMessage(message, cssClass) {
         const div = document.createElement('div');
         div.className = `alert alert-${cssClass} mt-4`;
@@ -106,4 +114,4 @@ $(document).ready(function () {
             document.querySelector('.alert').remove();
         }, 2000);
     }
-}*/
+}
