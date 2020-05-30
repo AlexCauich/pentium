@@ -20,20 +20,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Pendientes</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Entregados</a>
-                </li>
             </ul>
         </div>
     </nav>
     <div class="jumbotron">
+        <h1>Aluminios Soberanis </h1>
         <div class="row">
-            <div class="col-md-8 col-sm-8">
-                <h1>Aluminios Soberanis </h1>
+            <div class="col-md-7 col-sm-8">
                 <h3>Pendientes</h3>
                 <h6>Tabla de trabajos pendientes</h6>
 
-                <table class="table">
+                <table class="table table-dark table-hover">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -55,6 +52,36 @@
                             <td><?php echo $row['fecha_registro']; ?></td>
                             <td>
                                 <a href="show.php?id=<?php echo $row['id_register']; ?>" class="btn btn-warning">Revisar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <?php } ?>
+                </table>
+            </div>
+
+            <div class="col-md-5 col-sm-5">
+                <h3>Realizados</h3>
+                <h6>Tabla de trabajos realizados</h6>
+                <table class="table table-primary table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre del trabajo</th>
+                            <th>Nombre del cliente</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
+                            include('server/slopes/view_slopes.php');
+                            while($data = mysqli_fetch_array($query_result)) {
+                        ?>
+                        <tr>
+                            <td><?php echo $data['id_delivered']; ?></td>
+                            <td><?php echo $data['name_job']; ?></td>
+                            <td><?php echo $data['name_service']; ?></td>
+                            <td>
+                                <a name="view_delivered" href="server/slopes/view_register.php?id=<?php echo $data['id_delivered']; ?>" class="btn btn-success">Ver</a>
                             </td>
                         </tr>
                     </tbody>
