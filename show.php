@@ -17,7 +17,7 @@
                 <div class="card">
                     <div class="card-header">
                         <p class="text-center">Registro: <?php echo $row['id_register'] ?></p>
-                        <button class="btn btn-success">Agregar a completados</button>
+                        <a href="server/slopes/add.php?ID=<?php echo $row['id_register']; ?>" class="btn btn-success">Agregar a completados</a>
                     </div>
                     <div class="card-body">
                         <p><strong>Nombre del trabajo</strong> : <?php echo $row['name_job'] ?></p>
@@ -29,8 +29,7 @@
                         <p><strong>Fecha de registro</strong> : <?php echo $row['fecha_registro'] ?></p>
                     </div>
                     <div class="card-body">
-                        <button type="submit" class="btn btn-warning">Editar</button>
-                        <a type="submit" class="btn btn-primary" href="index.php" >Volver</a>
+                        <a type="submit" class="btn btn-primary" href="home.php" >Volver</a>
                     </div>
                 </div>
                 <?php } ?>
@@ -38,7 +37,7 @@
         </div>
     </div>
 
-            <!-- Optional JavaScript -->
+    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

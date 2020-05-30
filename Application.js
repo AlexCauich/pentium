@@ -57,7 +57,7 @@ $(document).ready(function () {
                         <td>${register.fecha_registro}</td>
                         <td>
                             <button class="reg_delete btn btn-danger">Borrar</button>
-                            <button type="button" class="register_edit btn btn-warning mt-1" data-toggle="modal" data-target="#exampleModal">
+                            <button type="button" class="register_edit btn btn-warning" data-toggle="modal" data-target="#exampleModal">
                                 Editar
                             </button>
                         </td>
