@@ -27,9 +27,9 @@
     </nav>
 
     <div class="jumbotron">
-        <div class="row justify-content-center">
+        <div id="App" class="row justify-content-center">
             <div class="col-md-5 col-sm-5">
-                <form action="auth/login.php" method="POST" class="card">
+                <form id="register-form" class="card">
                     <div class="card-header text-center"><strong>Aluminios Soberanis</strong><h3>Iniciar sesion</h3></div>
                     <div class="card-body">
                         <div class="images form-group">
@@ -37,20 +37,24 @@
                         </div>
                         <div class="form-group">
                             <label for="">Correo electronico</label>
-                            <input type="email" name="email" class="form-control" placeholder="Ingresar el texto">
+                            <input type="email" id="email" class="form-control" placeholder="Ingresar el texto">
                         </div>
                         <div class="form-group">
                             <label for="">Contraseña</label>
-                            <input type="password" name="password" class="form-control" placeholder="Ingresar el texto">
+                            <input type="password" id="password" class="form-control" placeholder="Ingresar el texto">
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-outline-primary">Iniciar sesion</button>
+                        <button type="submit" id="login" class="btn btn-outline-primary">Iniciar sesion</button>
                         <a  href="register.html" type="submit" class="btn btn-outline-success">Registrate!</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="Auth.js"></script>
+
 </body>
 </html>
