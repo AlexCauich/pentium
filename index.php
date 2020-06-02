@@ -72,6 +72,10 @@
                                         <input type="text" class="form-control" id="anticipo" placeholder="Anticipo">
                                     </div>
                                     <div class="form-group">
+                                        <label for="">Fecha :</label>
+                                        <input type="date" class="form-control" id="fecha" placeholder="Fecha">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="">Especificaciones :</label>
                                         <textarea class="form-control" id="especi" id="exampleFormControlTextarea1" rows="3" placeholder="Ingresa el texto aqui"></textarea>
                                     </div>
@@ -111,7 +115,7 @@
 
     <!-- Optional JavaScript -->
     <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="Application.js"></script>
+    <script src="App.js"></script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
