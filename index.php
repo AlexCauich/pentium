@@ -72,10 +72,6 @@
                                         <input type="text" class="form-control" id="anticipo" placeholder="Anticipo">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Anticipo :</label>
-                                        <input type="date" id="data" class="form-control">
-                                    </div>
-                                    <div class="form-group">
                                         <label for="">Especificaciones :</label>
                                         <textarea class="form-control" id="especi" id="exampleFormControlTextarea1" rows="3" placeholder="Ingresa el texto aqui"></textarea>
                                     </div>

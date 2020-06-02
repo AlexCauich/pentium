@@ -14,7 +14,6 @@ $(document).ready(function () {
             place_delivery: $('#place_delivery').val(),
             anticipo: $('#anticipo').val(),
             especi: $('#especi').val(),
-            data: $('#data').val(),
             id: $('#datoID').val()
 
         };
