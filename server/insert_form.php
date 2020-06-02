@@ -9,7 +9,7 @@
         $anticipo = $_POST['anticipo'];
         $especi = $_POST['especi'];
     
-        $date = date('Y-m-d');
+        $data = $_POST['data'];
     
         $query = "INSERT INTO register(name_job,name_service,phone,place_delivery,anticipo,especi,fecha_registro) VALUES('$name_job', '$name_service', '$phone', '$place_delivery', '$anticipo', '$especi', '$date')";
         $result = mysqli_query($db, $query);

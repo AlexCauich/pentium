@@ -1,3 +1,4 @@
+<?php include('auth/auth_session.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +18,13 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="home.php">Home</a>
+                    <a class="nav-link" href="home.php">Inicio</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Pendientes <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="auth/logout.php">Cerrar sesion</a>
                 </li>
             </ul>
         </div>
@@ -29,6 +33,7 @@
         <div id="App" class="row">
             <div class="col-md-12 col-sm-12">
                 <div class="tra_reg">
+                    <h5> <strong>Usuraio</strong> : <?php echo $_SESSION['email']; ?></h5>
                     <h2>Trabajos Pendientes</h2>
                     <button type="button" class="btn btn-primary mt-2 mb-2 ml-2" data-toggle="modal" data-target="#exampleModal">
                         Nuevo registro
@@ -65,6 +70,10 @@
                                     <div class="form-group">
                                         <label for="">Anticipo :</label>
                                         <input type="text" class="form-control" id="anticipo" placeholder="Anticipo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Anticipo :</label>
+                                        <input type="date" id="data" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Especificaciones :</label>

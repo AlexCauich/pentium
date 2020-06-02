@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Aluminios Soberanis</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Iniciar sesion <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html">Registrarse</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <div class="row justify-content-center">
+            <div class="col-md-5 col-sm-5">
+                <form action="auth/login.php" method="POST" class="card">
+                    <div class="card-header text-center"><strong>Aluminios Soberanis</strong><h3>Iniciar sesion</h3></div>
+                    <div class="card-body">
+                        <div class="images form-group">
+                            <img src="https://api-private.atlassian.com/users/557058:2f00027b-944f-4b80-8ae3-8fb032736f74/avatar?initials=public" alt="" srcset="">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Correo electronico</label>
+                            <input type="email" name="email" class="form-control" placeholder="Ingresar el texto">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Contraseña</label>
+                            <input type="password" name="password" class="form-control" placeholder="Ingresar el texto">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-outline-primary">Iniciar sesion</button>
+                        <a  href="register.html" type="submit" class="btn btn-outline-success">Registrate!</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

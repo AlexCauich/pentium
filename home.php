@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <title>Home</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Pendientes</a>
+                    <a class="nav-link" href="index.php">Pendientes</a>
                 </li>
             </ul>
         </div>
@@ -60,38 +61,53 @@
             </div>
 
             <div class="col-md-5 col-sm-5">
-                <h3>Realizados</h3>
-                <h6>Tabla de trabajos realizados</h6>
-                <table class="table table-primary table-hover">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre del trabajo</th>
-                            <th>Nombre del cliente</th>
-                            <th>Opciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <div id="target-content" >
+                    <strong>loading...</strong>
+                </div>
+
+                <?php
+                    include('server/database.php'); 
+                    $limit = 5;
+                    $sql = "SELECT COUNT(id_delivered) FROM delivered";  
+                    $rs_result = mysqli_query($db, $sql);  
+                    $row = mysqli_fetch_row($rs_result);  
+                    $total_records = $row[0];  
+                    $total_pages = ceil($total_records / $limit); 
+                ?>
+                <div class="justify_content-center">
+                    <div class="pagination btn-group mr-2" id="pagination" role="group" aria-label="Second group">
                         <?php 
-                            include('server/slopes/view_slopes.php');
-                            while($data = mysqli_fetch_array($query_result)) {
-                        ?>
-                        <tr>
-                            <td><?php echo $data['id_delivered']; ?></td>
-                            <td><?php echo $data['name_job']; ?></td>
-                            <td><?php echo $data['name_service']; ?></td>
-                            <td>
-                                <a name="view_delivered" href="server/slopes/view_register.php?id=<?php echo $data['id_delivered']; ?>" class="btn btn-success">Ver</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <?php } ?>
-                </table>
+                            if(!empty($total_pages)):for($i=1; $i<=$total_pages; $i++):  
+                            if($i == 1):
+                            ?>
+
+                            <li class='active' id="<?php echo $i;?>">
+                                <a class="btn btn-secondary" href='server/slopes/view_slopes.php?page=<?php echo $i;?>'><?php echo $i;?></a>
+                            </li> 
+                            <?php else:?>
+                                <li id="<?php echo $i;?>">
+                                    <a class="btn btn-secondary" href='server/slopes/view_slopes.php?page=<?php echo $i;?>'><?php echo $i;?></a>
+                                </li>
+                            <?php endif;?>			
+                        <?php endfor;endif;?>  
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="server/slopes/Slopes.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#target-content").load("server/slopes/view_slopes.php?page=1");
+                $("#pagination li").on('click',function(e){
+                e.preventDefault();
+                    $("#target-content").html('loading...');
+                    $("#pagination li").removeClass('active');
+                    $(this).addClass('active');
+                    var pageNum = this.id;
+                    $("#target-content").load("server/slopes/view_slopes.php?page=" + pageNum);
+            });
+        });
+    </script>
 </body>
 </html>
