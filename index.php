@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://scontent.fmid2-1.fna.fbcdn.net/v/t1.0-9/90115929_136732171196292_3441089044065288192_n.png?_nc_cat=100&_nc_sid=85a577&_nc_eui2=AeHhuXmDw2rKIynPrEFqIK0-4HBH6HtMkJLgcEfoe0yQkrS1RNbe8z_HwnS6sHFqVmlVdBOnBpypidflaK1jy1QF&_nc_oc=AQmO2LFNttOYnyxFi5uvmWpP9UulESPNXJTVTTWHbj3q-no4NbXKA15075A-fUGKik74f7rV_fzZsgVi304n3uL_&_nc_ht=scontent.fmid2-1.fna&oh=7da262354344cae9e501c261846bb394&oe=5EFA8D95">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
@@ -10,12 +11,12 @@
     <title>Pentium</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Aluminios Soberanis</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarColor01">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="home.php">Inicio</a>
@@ -28,12 +29,16 @@
                 </li>
             </ul>
         </div>
+        <div class="form-inline my-2 my-lg-0">
+            <div class="form-group mr-sm-2">
+                <p class="mt-3"><strong>Usuario</strong> : <?php echo $_SESSION['email']; ?> </p>
+            </div>
+        </div>
     </nav>
     <div class="jumbotron">
         <div id="App" class="row">
             <div class="col-md-12 col-sm-12">
                 <div class="tra_reg">
-                    <h5> <strong>Usuraio</strong> : <?php echo $_SESSION['email']; ?></h5>
                     <h2>Trabajos Pendientes</h2>
                     <button type="button" class="btn btn-primary mt-2 mb-2 ml-2" data-toggle="modal" data-target="#exampleModal">
                         Nuevo registro
