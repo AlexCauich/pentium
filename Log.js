@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+  console.log("funcioa");
+
   $('#register-form').submit(function (e) {
     const postDate = {
       email: $('#email').val(),
@@ -33,7 +35,7 @@ class UI {
       div.appendChild(document.createTextNode(message));
 
       //show dom
-      const container = document.querySelector('.jumbotron');
+      const container = document.querySelector('.cont');
       const app = document.querySelector('#App');
       container.insertBefore(div, app);
       setTimeout(function() {

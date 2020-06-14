@@ -3,6 +3,7 @@
 include('../server/database.php');
 session_start();
 
+token_get_all('../redirect.php');
 
 if(isset($_POST['email'])) {
     $email = mysqli_real_escape_string($db, $_POST['email']);
