@@ -31,7 +31,6 @@
                     </div>
                     <button type="submit" id="login" class="btn btn-primary">Iniciar sesion</button>
                     <a  href="register.html" type="submit" class="btn btn-success">Registrate!</a>
-                    <?php include('redirect.php'); ?>
                 </form>
             </div>
         </div>
