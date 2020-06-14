@@ -19,21 +19,34 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="home.php">Inicio</a>
+                    <a class="nav-link" href="home.php">Inicio</a>               
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Pendientes <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="auth/logout.php">Cerrar sesion</a>
+                    <a class="nav-link" href="#">Pendientes <span class="sr-only">(current)</span> </a>
                 </li>
             </ul>
         </div>
         <div class="form-inline my-2 my-lg-0">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Perfil</a>
+                            <a class="dropdown-item" href="settings/page_setup.php">Configuración</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="auth/logout.php" >Cerrar sesion</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
             <div class="form-group mr-sm-2">
                 <p class="mt-3"><strong>Usuario</strong> : <?php echo $_SESSION['email']; ?> </p>
             </div>
         </div>
+
     </nav>
     <div class="jumbotron">
         <div id="App" class="row">

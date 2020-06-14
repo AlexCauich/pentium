@@ -33,9 +33,9 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Perfil</a>
-                            <a class="dropdown-item" href="#">Configuración</a>
+                            <a class="dropdown-item" href="settings/page_setup.php">Configuración</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item active" href="auth/logout.php" >Cerrar sesion</a>
+                            <a class="dropdown-item" href="auth/logout.php" >Cerrar sesion</a>
                         </div>
                     </li>
                 </ul>
