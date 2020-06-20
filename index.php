@@ -19,7 +19,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="home.php">Inicio</a>               
+                    <a class="nav-link" href="home.php">Registros</a>               
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Pendientes <span class="sr-only">(current)</span> </a>
