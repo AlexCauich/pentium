@@ -24,6 +24,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Pendientes <span class="sr-only">(current)</span> </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="budget.php">Presupuestos</a>               
+                </li>
             </ul>
         </div>
         <div class="form-inline my-2 my-lg-0">
