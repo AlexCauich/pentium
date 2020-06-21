@@ -90,7 +90,7 @@
                                         <input type="text" class="form-control" id="anticipo" placeholder="Anticipo">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Fecha :</label>
+                                        <label for="">Fecha de registro :</label>
                                         <input type="date" class="form-control" id="fecha" placeholder="Fecha">
                                     </div>
                                     <div class="form-group">
