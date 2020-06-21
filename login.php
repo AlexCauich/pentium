@@ -22,8 +22,8 @@
             <div class="login-form">
                 <form id="register-form">
                     <div class="form-group">
-                        <label for="">Correo electronico</label>
-                        <input type="email" id="email" class="form-control" placeholder="example@example.com">
+                        <label for="">Usuario o correo electronico</label>
+                        <input type="text" id="email" class="form-control" placeholder="example@example.com">
                     </div>
                     <div class="form-group">
                         <label for="">Contraseña</label>
