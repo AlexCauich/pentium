@@ -82,4 +82,17 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+
+    // Eliminar una registro
+    $(document).on('click', '.delete', function(e) {
+        if(confirm('Are you sure you want to delete it?')) {
+            let element = $(this)[0].parentElement.parentElement;
+            let id = $(element).attr('datoID');
+            $.post('queries/destroy.php', {id}, function(resp) {
+                console.log(resp);
+                getList();
+            });
+        }
+        e.preventDefault();
+    })
 });
