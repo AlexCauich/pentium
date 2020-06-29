@@ -1,7 +1,7 @@
 <?php 
     include('database.php');
 
-    if(isset($_POST['reg_form'])){
+    if(isset($_POST['name'])){
         $name = $_POST['name'];
         $phone = $_POST['phone'];
         $direction = $_POST['direction'];
@@ -16,7 +16,7 @@
         if(!$result) {
             die("Query Failed");
         }
-
-        header('location: ../budget.php');
+        
+        echo 'Register Added success';
     }
 ?>

@@ -8,9 +8,6 @@ $query_select = "SELECT * FROM register WHERE id_register = $id";
 $result = mysqli_query($db, $query_select);
 
 while($row = mysqli_fetch_array($result)) {
-    $id_register = $row['id_register'];
-    $name_job = $row['name_job'];
-    $name_service = $row['name_service'];
     $phone = $row['phone'];
     $place_delivery = $row['place_delivery'];
     $anticipo = $row['anticipo'];
