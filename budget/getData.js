@@ -1,6 +1,9 @@
 $(document).ready(function() {
 
     getList();
+    console.log('resp')
+    
+    let edit = false;
     
     $('#form').submit(function(e) {
         const postData = {
@@ -10,12 +13,17 @@ $(document).ready(function() {
             direction: $('#direction').val(),
             type_job: $('#type_job').val(),
             price: $('#price').val(),
-            especi: $('#especi').val()
+            especi: $('#especi').val(),
+            id: $('#datoID').val()
         };
 
-        $.post('queries/insert.php', postData, function(resp){
+        let url = edit === false ? 'queries/insert.php' : 'queries/edit.php';
+
+        $.post(url, postData, function(resp){
             console.log(resp);
             getList();
+            $('#form').trigger('reset');
+
         });
         e.preventDefault();
         
@@ -37,8 +45,8 @@ $(document).ready(function() {
                             <td>${data.price}</td>
                             <td>${data.date_register}</td>
                             <td>
-                                <button class="btn btn-warning">Editar</button>
-                                <button class="btn btn-danger">Borrar</button>
+                                <button class="edit btn btn-warning">Editar</button>
+                                <button class="delete btn btn-danger">Borrar</button>
                             </td>
                         </tr>
                     `
@@ -94,5 +102,24 @@ $(document).ready(function() {
             });
         }
         e.preventDefault();
-    })
+    });
+
+    $(document).on('click', '.edit', function(e) {
+        let element = $(this)[0].parentElement.parentElement;
+        let id = $(element).attr('datoID');
+
+        $.post('queries/update.php', {id}, function(res) {
+            const content = JSON.parse(res);
+            $('#name').val(content.name);
+            $('#phone').val(content.phone);
+            $('#direction').val(content.direction);
+            $('#type_job').val(content.type_job);
+            $('#preci').val(content.preci);
+            $('#especi').val(content.especi);
+            $('#date_register').val(content.date_register);
+            $('#datoID').val(content.id_budget);
+            edit = true;
+            e.preventDefault()
+        }); 
+    });
 });
