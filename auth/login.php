@@ -9,13 +9,12 @@ if(isset($_POST['email'])) {
     $mdpassword = md5($password);
 
 
-    $query = "SELECT * FROM users WHERE email = '$email' OR first_name = '$email' AND password = '$mdpassword'";
+    $query = "SELECT * FROM users WHERE username = '$email' AND password = '$mdpassword'";
     $result = mysqli_query($db, $query);
     
     $rows = mysqli_num_rows($result);
 
     if ($rows == 1) {
-        $_SESSION['email'] = $first_name;
         $_SESSION['email'] = $email;
         exit();
     } 

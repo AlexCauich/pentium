@@ -50,7 +50,7 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/login.css">
+        <link rel="stylesheet" href="assets/css/log.css">
 
         <title>Login</title>
     </head>
@@ -58,6 +58,53 @@
         <div class="container mt-4">
             <h1 class="text-center mt-5">Aluminios Soberanis</h1>
             <div id="App" class="row mt-5 justify-content-center">
+
+
+                <!-- Modal Register -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Registro</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <label for="email">Nombre de usuario o correo</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <img src="Budget/svg/user.svg" class="input-group-text" id="basic-addon1"/>
+                                    </div>  
+                                    <input type="text" class="form-control" name="username" id="username" placeholder="Example@exam.com" aria-label="email" aria-describedby="basic-addon1">  
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Contraseña</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <img src="Budget/svg/eye.svg" type="button" class="input-group-text" id="mostrar_contrasena"/>
+                                        </div>  
+                                        <input type="password" class="form-control" name="reg_password" id="reg_password" placeholder="Contraseña" aria-label="email" aria-describedby="basic-addon1">  
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Repetir contraseña</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <img src="Budget/svg/eye.svg" type="button" class="input-group-text" id="mostrar_contrasena"/>
+                                        </div>  
+                                        <input type="password" class="form-control" name="repeat_pass" id="repeat_pass" placeholder="Repetir contraseña" aria-label="email" aria-describedby="basic-addon1">  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button type="submit" name="register" id="register" class="btn btn-success">Crear cuenta</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end modal-->
                 <div class="col-md-4">
                     <form id="form" class="card">
                         <div class="card-body">
@@ -79,14 +126,14 @@
                                     <div class="input-group-prepend">
                                         <img src="Budget/svg/eye.svg" type="button" class="input-group-text" id="mostrar_contrasena"/>
                                     </div>  
-                                    <input type="password" class="form-control" name="password" id="password" placeholder="Example@exam.com" aria-label="email" aria-describedby="basic-addon1">  
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" aria-label="email" aria-describedby="basic-addon1">  
                                 </div>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary mt-3">Iniciar secion</button>
                             </div>
                             <div class="form-group">
-                                <a href="#">Obtener una cuenta</a>
+                                <a href="#" type="button" data-toggle="modal" data-target="#exampleModal">Obtener una cuenta</a>
                             </div>
                         </div>
                     </form>
@@ -96,7 +143,7 @@
 
         <!-- Optional JavaScript -->
         <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="app.js"></script>
+        <script src="App.js"></script>
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

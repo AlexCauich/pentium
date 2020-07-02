@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  console.log("jaja");
+  console.log("login and ");
 
   $('#mostrar_contrasena').click(function () {
     if ($('#password').attr('type', 'password')){
@@ -31,6 +31,22 @@ $(document).ready(function () {
       });
     }
 
+    e.preventDefault();
+  });
+
+
+  $("#register").on('click', function(e) {
+    const regData = {
+      username: $("#username").val(),
+      reg_password: $("#reg_password").val(),
+      repeat_pass: $("#repeat_pass").val()
+    };
+
+    $.post('auth/sign_in.php', regData, function(resp) {
+      console.log(resp);
+      window.location.href = "index.php";
+    })
+    console.log(regData); 
     e.preventDefault();
   });
 

@@ -1,0 +1,11 @@
+body {
+    background: url('https://images.pexels.com/photos/531844/pexels-photo-531844.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1{
+    color: #000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
