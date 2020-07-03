@@ -15,7 +15,7 @@ if(isset($_POST['username'])) {
     $query_check = "SELECT * FROM users WHERE username = '$username'";
     $result_check = mysqli_query($db, $query_check);
     if(mysqli_num_rows($result_check) == 1) {
-        die("un usuario ya existe con ese nombre y correo");
+        echo"un usuario ya existe con ese nombre y correo";
     }else {
         $query = "INSERT INTO users(username, password, repead_password) VALUES('$username','$mdpassword','$mdpassword')";
         $result = mysqli_query($db, $query);
@@ -23,7 +23,6 @@ if(isset($_POST['username'])) {
             die('Query failed');
         }
         $_SESSION['success'] = "You are now logged in";
-        header('location: ../index.php');
     }
 
 }

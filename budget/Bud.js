@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     getList();
-    console.log('resp')
+    console.log('functi')
     
     let edit = false;
     
@@ -40,13 +40,20 @@ $(document).ready(function() {
                 datas.forEach(data => {
                     template += `
                         <tr datoID=${data.id_budget}>
-                            <td><img class="view" type="button" src="svg/circle.svg" data-toggle="modal" data-target="#exampleModal"    /> ${data.name}</td>
+                            <td><strong>${data.name}</strong></td>
                             <td>${data.type_job}</td>
                             <td>${data.price}</td>
                             <td>${data.date_register}</td>
                             <td>
-                                <button class="edit btn btn-warning">Editar</button>
-                                <button class="delete btn btn-danger">Borrar</button>
+                                <button class="view btn btn-success" title="Revisar" data-toggle="modal" data-target="#exampleModal">
+                                    <img src="svg/check-circle.svg"/>
+                                </button>
+                                <button class="delete btn btn-danger">
+                                    <img src="svg/delete.svg" title="Borrar" alt="">
+                                </button>
+                                <button class="edit btn btn-warning">
+                                    <img src="svg/edit.svg" title="Editar" alt="">
+                                </button>
                             </td>
                         </tr>
                     `

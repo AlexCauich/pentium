@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  console.log("login and ");
+  console.log("funcuina ajja ");
 
   $('#mostrar_contrasena').click(function () {
     if ($('#password').attr('type', 'password')){
@@ -26,7 +26,10 @@ $(document).ready(function () {
       ui.showMessage('Ingresa una contraseña valida', 'danger');
     }else {
       $.post('auth/login.php', postDate, function(response) {
-        console.log(response);
+        const ui = new UI();
+        ui.showMessage(response, 'danger');
+  
+        $('#form').trigger('reset');
         window.location.href = "index.php";
       });
     }
@@ -41,12 +44,17 @@ $(document).ready(function () {
       reg_password: $("#reg_password").val(),
       repeat_pass: $("#repeat_pass").val()
     };
+    
 
-    $.post('auth/sign_in.php', regData, function(resp) {
-      console.log(resp);
-      window.location.href = "index.php";
-    })
-    console.log(regData); 
+    if(regData.username == '') {
+      $("#username").css('border-color', 'red');
+    }else {
+
+      $.post('auth/sign_in.php', regData, function(resp) {
+
+        window.location.href = "index.php";
+      });
+    }
     e.preventDefault();
   });
 

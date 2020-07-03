@@ -57,10 +57,9 @@
                 <h3>Pendientes</h3>
                 <h6>Tabla de trabajos pendientes</h6>
 
-                <table class="table table-dark table-hover">
-                    <thead>
+                <table class="table bg-info table-hover ">
+                    <thead class="thead-dark">
                         <tr>
-                            <th>ID</th>
                             <th>Nombre del trabajo</th>
                             <th>Nombre del cliente</th>
                             <th>Fecha de registro</th>
@@ -73,12 +72,13 @@
                     ?>
                     <tbody>
                         <tr>
-                            <td><?php echo $row['id_register']; ?></td>
                             <td><?php echo $row['name_job']; ?></td>
                             <td><?php echo $row['name_service']; ?></td>
                             <td><?php echo $row['fecha_registro']; ?></td>
                             <td>
-                                <a href="show.php?id=<?php echo $row['id_register']; ?>" class="btn btn-warning">Revisar</a>
+                                <a href="show.php?id=<?php echo $row['id_register']; ?>" class="btn btn-warning">
+                                    <img src="Budget/svg/eye.svg" title="revisar" alt="">
+                                </a>
                             </td>
                         </tr>
                     </tbody>

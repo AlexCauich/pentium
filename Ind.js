@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
 
-    console.log("query funiona jaja");
+    console.log("queryjaja");
     fetchJob();
 
     let edit = false;
@@ -49,7 +49,6 @@ $(document).ready(function () {
                 registers.forEach(register => {
                     template += `
                     <tr datoID=${register.id_register}>
-                        <td>${register.id_register}</td>
                         <td>${register.name_job}</td>
                         <td>${register.name_service}</td>
                         <td>${register.phone}</td>
@@ -58,9 +57,11 @@ $(document).ready(function () {
                         <td width="20%">${register.especi}</td>
                         <td>${register.fecha_registro}</td>
                         <td>
-                            <button class="reg_delete btn btn-danger">Borrar</button>
-                            <button type="button" class="register_edit btn btn-warning" data-toggle="modal" data-target="#exampleModal">
-                                Editar
+                            <button class="reg_delete btn btn-danger" >
+                                <img src="Budget/svg/delete.svg" title="Borrar"/>
+                            </button>
+                            <button type="button" class="register_edit btn btn-warning" data-toggle="modal" data-target="#exampleModal" title="Editar">
+                                <img src="Budget/svg/edit.svg"/>
                             </button>
                         </td>
                     </td>

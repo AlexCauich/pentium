@@ -34,6 +34,7 @@
                     </div>
                     <div class="card-body">
                         <a type="submit" class="btn btn-primary" href="../../home.php" >Volver</a>
+                        <a type="submit" class="btn btn-secondary" href="return.php?ID=<?php echo $row['id_delivered']; ?>">Regresar a pendientes</a>
                     </div>
                 </div>
                 <?php } ?>

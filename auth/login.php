@@ -17,6 +17,9 @@ if(isset($_POST['email'])) {
     if ($rows == 1) {
         $_SESSION['email'] = $email;
         exit();
+    }
+    else{
+        echo 'El usuario no existe';
     } 
     
 }

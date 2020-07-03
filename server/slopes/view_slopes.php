@@ -10,10 +10,9 @@ $rs_result = mysqli_query($db, $sql);
 ?>
 <h3>Realizados</h3>
 <h6>Tabla de trabajos realizados</h6>
-<table class="table table-primary table-hover">
-    <thead>
+<table class="table bg-info table-hover">
+    <thead class="thead-dark">
         <tr>
-            <th>ID</th>
             <th>Nombre del trabajo</th>
             <th>Nombre del cliente</th>
             <th>Fecha de registro</th>
@@ -25,12 +24,13 @@ $rs_result = mysqli_query($db, $sql);
             while($data = mysqli_fetch_array($rs_result)) {
         ?>
         <tr>
-            <td><?php echo $data['id_delivered']; ?></td>
             <td><?php echo $data['name_job']; ?></td>
             <td><?php echo $data['name_service']; ?></td>
             <td><?php echo $data['fecha_registro']; ?></td>
             <td>
-                <a name="view_delivered" href="server/slopes/view_register.php?id=<?php echo $data['id_delivered']; ?>" class="btn btn-success">Ver</a>
+                <a name="view_delivered" href="server/slopes/view_register.php?id=<?php echo $data['id_delivered']; ?>" class="btn btn-success">
+                    <img src="Budget/svg/check-square.svg" title="revisar" alt="">
+                </a>
             </td>
         </tr>
     </tbody>

@@ -56,10 +56,11 @@
             <div class="col-md-12 col-sm-12">
                 <div class="tra_reg">
                     <h2>Trabajos Pendientes</h2>
-                    <button type="button" class="btn btn-primary mt-2 mb-2 ml-2" data-toggle="modal" data-target="#exampleModal">
-                        Nuevo registro
-                    </button>
-                      
+                    <div class="form-group">
+                        <button type="button" class="btn btn-info mt-2 mb-2 ml-2" data-toggle="modal"  title="Nuevo registro" data-target="#exampleModal">
+                            <img src="Budget/svg/plus-circle.svg" alt="" srcset=""> Nuevo registro
+                        </button> 
+                    </div>      
                     <!-- Modal Register -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -109,10 +110,9 @@
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table">
-                            <thead>
+                        <table class="table bg-info">
+                            <thead class="thead-dark">
                                 <tr>
-                                    <th>#</th>
                                     <th>Nombre del trabajo</th>
                                     <th>Nombre del cliente</th>
                                     <th>Telefono</th>
@@ -136,7 +136,7 @@
 
     <!-- Optional JavaScript -->
     <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="Api.js"></script>
+    <script src="Ind.js"></script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
